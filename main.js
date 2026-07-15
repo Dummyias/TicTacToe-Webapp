@@ -7,10 +7,19 @@ let field = [
     ["0", "0", "3"]
 
 ];
-let run = true;
-let fieldstr = "";
+
+
+
+//Location of placement.
 let firstpos = 0;
 let secondpos = 0;
+
+// String that contains the current row. Defined here so data could be added later.
+let fieldstr = "";
+
+//While this is true, the next while function will run. 
+let run = true;
+
 
 while(run){
 
