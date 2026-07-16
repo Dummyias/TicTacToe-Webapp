@@ -1,5 +1,5 @@
-
-//Display logic
+import{check} from './check_for_win.js'
+//This entire file is display logic
 
 let field = [
     ["0", "0", "1"],
@@ -17,8 +17,11 @@ let secondpos = 0;
 // String that contains the current row. Defined here so data could be added later.
 let fieldstr = "";
 
-//While this is true, the next while function will run. 
+//This doesn't work yet
 let run = true;
+
+// If the value is equal to 0, it's player one's turn.
+// If the value is 1, it's player two's turn.
 let current_player = 0;
 
 while(run){
