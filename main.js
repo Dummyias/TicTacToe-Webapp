@@ -19,7 +19,7 @@ let fieldstr = "";
 
 //While this is true, the next while function will run. 
 let run = true;
-
+let current_player = 0;
 
 while(run){
 
@@ -27,18 +27,30 @@ while(run){
     firstpos = prompt();
     secondpos = prompt();
 
-    if((firstpos == 6) || (secondpos == 6)){
+    if((firstpos == "6") || (secondpos == "6")){
         run = false;
+        console.log(run);
     }
 
-    field[firstpos-1][secondpos-1] = "x"
-for(let i = 0; i<3; i++){
-    for(let j = 0; j<3; j++){
-        fieldstr += field[i][j] + " ";
-    }
-    console.log(fieldstr);
-    fieldstr = "";
+    if(current_player == 0){
+        if(field[firstpos-1][secondpos-1] != "x" && field[firstpos-1][secondpos-1] != "o"){
+    field[firstpos-1][secondpos-1] = "x";
+    current_player = 1;}
+}else{
+    if(field[firstpos-1][secondpos-1] != "x" && field[firstpos-1][secondpos-1] != "o"){
+    field[firstpos-1][secondpos-1] = "o";
+    current_player = 0;}
 }
+
+
+
+    for(let i = 0; i<3; i++){
+        for(let j = 0; j<3; j++){
+            fieldstr += field[i][j] + " ";
+        }
+        console.log(fieldstr);
+        fieldstr = "";
+    }
     console.log("");
 }
 // end of display logic
